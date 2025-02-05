@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreProductRequest;
+use App\Http\Requests\UpdateProductRequest;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -59,5 +60,28 @@ class ProductController extends Controller
         } else {
             Alert::error('Gagal', 'Barang gagal dihapus');
         }
+    }
+
+    public function edit($id) {
+        $active = 'edit-product';
+        $product = Product::where('id', $id)->first();
+
+        return view('edit', compact('active', 'product'));
+    }
+
+    public function update(UpdateProductRequest $request, $id) {
+
+        $validated_data = $request->validated();
+        $product = Product::find($id);
+
+        $updated = $product->update($validated_data);
+
+        if ($updated) {
+            Alert::success('Sukses', 'Barang berhasil diubah');
+            return redirect()->route('products.index');
+        } else {
+            Alert::error('Gagal', 'Barang gagal diubah');
+        }
+
     }
 }

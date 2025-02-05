@@ -32,7 +32,7 @@
 								<td>{{ $item->jenis_barang }}</td>
 								<td>{{ $item->stok_barang }}</td>
 								<td class="text-center d-flex gap-2">
-									<a href="#"
+									<a href="{{ route('products.edit', ['product' => $item->id]) }}"
 										class="btn btn-sm btn-info  position-relative d-flex">
 										<i class="bx bx-check"></i> Edit
 									</a>
