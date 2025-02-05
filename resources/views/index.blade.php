@@ -26,6 +26,7 @@
 						<tbody>
 							@foreach ($data as $item)
 							<tr>
+								<td>{{ $loop->iteration }}</td>
 								<td>{{ $item->kode_barang }}</td>
 								<td>{{ $item->nama_barang }}</td>
 								<td>{{ $item->jenis_barang }}</td>

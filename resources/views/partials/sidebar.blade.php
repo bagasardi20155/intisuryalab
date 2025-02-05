@@ -21,7 +21,7 @@
         <li class="menu-item {{ $active == 'add-product' ? 'active' : '' }}">
             <a href="{{ route('products.create') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-plus"></i>
-                <div data-i18n="Add Product">Tambah Produk</div>
+                <div data-i18n="Add Product">Tambah Barang</div>
             </a>
         </li>
     </ul>
