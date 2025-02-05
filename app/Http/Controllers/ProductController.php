@@ -41,11 +41,23 @@ class ProductController extends Controller
         ]);
 
         if ($create) {
-            Alert::success('Sukses', 'Produk berhasil ditambahkan');
+            Alert::success('Sukses', 'Barang berhasil ditambahkan');
             return redirect()->route('products.index');
         } else {
-            Alert::error('Gagal', 'Produk gagal ditambahkan');
+            Alert::error('Gagal', 'Barang gagal ditambahkan');
         }
 
+    }
+
+    public function destroy($id) {
+        $product = Product::find($id);
+        $deleted = $product->delete();
+
+        if ($deleted) {
+            Alert::success('Sukses', 'Barang berhasil dihapus');
+            return redirect()->route('products.index');
+        } else {
+            Alert::error('Gagal', 'Barang gagal dihapus');
+        }
     }
 }

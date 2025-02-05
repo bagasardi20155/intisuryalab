@@ -26,7 +26,7 @@
                                 <div class="col-lg-12">
                                     <label><h6>Nama Barang <small style="color: red">*</small></h6></label>
                                     <fieldset class="form-group">
-                                        <input type="text" name="nama_barang" id="nama_barang" class="form-control @error('nama_barang') is-invalid @enderror" value="{{ old('nama_barang') }}" placeholder="Nama Produk" required>
+                                        <input type="text" name="nama_barang" id="nama_barang" class="form-control @error('nama_barang') is-invalid @enderror" value="{{ old('nama_barang') }}" placeholder="Nama Barang" required>
                                         @error('nama_barang')
                                             <small class="invalid-feedback">{{ $message }}</small>
                                         @enderror

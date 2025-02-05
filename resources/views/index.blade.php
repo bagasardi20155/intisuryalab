@@ -36,7 +36,7 @@
 										class="btn btn-sm btn-info  position-relative d-flex">
 										<i class="bx bx-check"></i> Edit
 									</a>
-									<form action="#" method="POST">
+									<form action="{{ route('products.destroy', ['product' => $item->id]) }}" method="POST">
 										@csrf
 										@method('delete')
 										<button
